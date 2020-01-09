@@ -1,26 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Главная</title>
-    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="css/main.css" />
-    <!--	<link rel="shortcut icon" href="img/favicon.ico">-->
+<head>
+    <title>Bicycle</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="stylesheet" href="css/main.css"/>
+
+    <!--    https://base64.guru/converter/encode/image/ico-->
+    <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAAF4AAABVCAMAAAD3y6OfAAAAilBMVEUAAABkwp5kwp5jwp5lwZ5kwp1jwaFkw59kw55nw59kwp5kw59lw55lwZxpxpZjwp5kw55kwp5kw59jwp5kwp9kw55jwp9kwp5kwp5kwp5kw59jw59kw55kwp5kvptkwp5kwp5kwp5kwp5kwp9kwp9kwp1kwp5kwp5kwp5kw55kwp5kwp5kw55kwp7tNmdGAAAALXRSTlMAzMUVIXgRM4YKyh4xGwVFSvVHQFU3Lqr6f2YpjlsO7rNw46SfPd2VzmDW6Lwpe0nQAAADVklEQVRYw7XYi5KqMAwG4MhFQaWKooKIgnc95v1f74RFT9BDKbD2n521nXU+YsowG6F5RHA4h/59lQjQkGCPz+yDr+Nig6VsxJf5XN/bS9eN7fxTXL6rJ0Qe3GLtHmiTfFN3/5DOW/L/uF/k19SZkudSf9YtBQvkSRGz8j5DTEEe6/9rL3s1/g7RK+89xF2N3ltCG99F9OEtPqKr0Jv72yp+q9TVPmv98r7P11Prat/4uNETREOht/FtxGt5f0W0m+uccbVv+oXHV/PNan0M0MGPMPdZx0iqd/FFSqQxE7SaGbR8CJnezd8+kOLf7z7m+laud6zfCfGZ0OlUO/ujys46d6ScN5a07518Tj+OJc+CEetdfI5c1+aPrqS3yYB8DbWzfx011wctYK5fj86+Hp37o0fn+rXo7HsK/Uq6Dp9r1+Z7rHfNgnwtOvs6dPaHXrW+aKO4Cv93enxpVb83bKXDMfRUvloPVkUu64/3j0Lc1PXfEE1qt/FfHouP2cnv1/jvf3PHIOM5zvu/YRhB5zCfBkGQZKvwbb6LkLJTzktWFKh459nslMDb68PuEOknU+jm7hzaKr5ivssQ7zfEvajng1Bshk15cX6VL/aIiVCPezGmu4ua53EyfS3OArL8t2I0f0RuY94iD/Kcqe5iNq49OS+88UbNi+eEFOSHwDOINAO06E3rZjzPkz3EXY9yR8Rp7eh/MKd+1pSPi+ZMsBQDajLN79+rq+J5s6KXB5ZzqvO3c8uLRDN+u/85ygWifxoUOSKm0C3M87h0p0ro5VJ6bmL108o037pkqvjBEDGc/BxAaPFTn/pVqQ/fmnYamjI+Xa/X2WaIlKwA+YsgvtinPgdQ+8Rz/AQo0Q6XwFmhsZTpat9m/Dh6nnAApcQnee1qf+4Usaeyu1elM8V+x7Cuw2ddm28apOvySZ8AaPJZl/uGqUHnTMjXorOvR2e/s67N77OuwWddg896U7+vR2e/jT4D0OCz3joz8rXo7OvR2e+sB7Hr3MCNbjBwTHcu87vWPk0uY3u2GWTT1SI6xtL6O3bmlBzBio7gOcnhcFnNW/msT0HGv6qHiXO0jqD21TrHGr96D4GINzFIMiVfravT2t+yrsFn/df+VqLr8x3Wf+9Hr9Vf/zllrYrIb54AAAAASUVORK5CYII="
+          rel="icon" type="image/x-icon"/>
     <!-- <meta name="robots" content="noindex, nofollow" /> -->
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
-  </head>
-  <body>
-    <div class="wrapper">
-      <!-- //= _header.html -->
-init
-      <!--    //= _footer.html-->
-    </div>
-    <!--	 //= _popup.html -->
-    //= _js.html
-  </body>
+</head>
+<body>
+<div class="wrapper">
+    <main class="page">
+        //= _header.html
+        <div class="main-screen">
+            <div class="main-screen__bg ibg">
+                <img src="img/bg_main.jpg" alt="">
+            </div>
+        </div>
+        <div class="content">
+            <section class="generation">
+                <div class="container">
+                    <div class="generation__block block">
+                        <div class="block__icon block__icon-generation">
+                            <img src="img/icons/i04.png" alt="">
+                        </div>
+                        <h1 class="block__title block__title-generation">
+                            a new generation of vintage bike
+                        </h1>
+                        <p class="block__text block__text-generation">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book. It has survived not only five
+                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="brands">
+                <div class="brands__row">
+                    <div class="brands__column brands__column_b">
+                        <a href="#" class="brands__item item">
+                            <span class="item__logo">
+                                <img src="img/logos/l03.png" alt="">
+                            </span>
+                            <span class="item__image ibg">
+                                <img src="img/brands/10.jpg" alt="">
+                            </span>
+                        </a>
+                    </div>
+                    <div class="brands__column">
+                        <div class="brands__block block">
+                            <div class="block__icon block__icon-brands">
+                                <img src="img/icons/i03.png" alt="">
+                            </div>
+                        </div>
+                        <h2 class="block__title block__title-brands">vitage oliva</h2>
+                        <p class="block__text block__text-brands">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived.
+                        </p>
+                        <div class="brands__image ibg">
+                            <img src="img/brands/11.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        //= _footer.html
+    </main>
+</div>
+//= _js.html
+</body>
 </html>

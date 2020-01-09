@@ -2,12 +2,11 @@
 //<ШРИФТЫ>===============================================================================================
 
 //<Подключаем шрифты>=======================================================================================
-
+@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i&display=swap');
 //</Подключаем шрифты>=======================================================================================
 
-
 //<Шрифт по умолчанию>==========================================================================================
-$fontfamily: Arial, "Helvetica Neue", Helvetica, sans-serif;
+$fontfamily: "Lato";
 
 //</Шрифт по умолчанию>==========================================================================================
 
@@ -15,130 +14,34 @@ $fontfamily: Arial, "Helvetica Neue", Helvetica, sans-serif;
 
 //<ПЕРЕМЕННЫЕ>===========================================================================================================
 $minwidth: 320px;
-$mw: 880; //container
+$mw: 1130px; //container
 //$md1: $mw+12;
 //$md2: 680.98;
 //$md3: 550.98;
 
+//$md1: 2559.98;
+//$md2: 1439.98;
+//$md3: 1023.98;
+//$md4: 1023.98;
+//$md5: 767.98;
+//$md6: 424.98;
+//$md6: 374.98;
+//$md7: 319.98;
+
 $md1: $mw+12;
-$md2: 992.98;
+$md2: 899.98;
 $md3: 767.98;
 $md4: 479.98;
-
 //</ПЕРЕМЕННЫЕ>===========================================================================================================
 
 //<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
-* {
-  padding: 0px;
-  margin: 0px;
-  border: 0px;
-}
-
-*, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-:focus, :active {
-  outline: none;
-}
-
-a:focus, a:active {
-  outline: none;
-}
-
-aside, nav, footer, header, section {
-  display: block;
-}
-
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  min-width: $minwidth;
-  position: relative;
-  width: 100%;
-  color: #000;
-}
-
-body {
-  font-size: 100%;
-  line-height: 1;
-  font-size: 14px;
-  font-family: $fontfamily;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-
-  &.lock {
-    overflow: hidden;
-    @media (max-width: $md3+px) {
-      width: 100%;
-      position: fixed;
-      overflow: hidden;
-    }
-  }
-}
-
-input, button, textarea {
-  font-family: $fontfamily;
-}
-
-input::-ms-clear {
-  display: none;
-}
-
-button {
-  cursor: pointer;
-}
-
-button::-moz-focus-inner {
-  padding: 0;
-  border: 0;
-}
-
-a, a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-ul li {
-  list-style: none;
-}
-
-img {
-  vertical-align: top;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: inherit;
-  font-size: inherit;
-}
-
-.ibg {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  img {
-    display: none;
-  }
-}
-
+@import '_null';
 //</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
 
 //<ОБОЛОЧКА>===========================================================================================================
 .wrapper {
-  width: 100%;
-  min-height: 100%;
   overflow: hidden;
-
-  &.loaded {
-  }
+  min-height: 100%;
 }
 
 //</ОБОЛОЧКА>===========================================================================================================
@@ -150,23 +53,194 @@ h1, h2, h3, h4, h5, h6 {
 //@import "libs/baguetteBox.scss";
 //@import "libs/pagging.scss";
 
-//@import "header";
+@import "header";
 
 //</ПОДКЛЮЧЕНИЯ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>=========================================================================================================
 
 //<ОСНОВНАЯ СЕТКА>===========================================================================================================
 .container {
-
+  max-width: $mw;
+  padding: 0 15px;
+  margin: 0 auto;
 }
 
 //</ОСНОВНАЯ СЕТКА>===========================================================================================================
 
 //<ОСНОВНОЙ БЛОК>===========================================================================================================
 
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  @include flexbox();
+  flex-direction: column;
+}
 
+.main-screen {
+  flex: 1 0 100%;
+  position: relative;
+  // .main-screen__bg
+  &__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+
+//===========================================================================================================
+.content {
+  flex: 1 0 100%;
+  background-color: #F7F7F7;
+
+}
+
+.generation {
+  // .generation__block
+  &__block {
+
+  }
+}
+
+//===========================================================================================================
+
+.block {
+  // .block__icon
+  &__icon {
+    text-align: center;
+
+    &-generation {
+      margin: 117px 0 33px 0;
+      @media (max-width: $md2+px) {
+        margin: 80px 0 33px 0;
+      }
+      @media (max-width: $md3+px) {
+        margin: 30px 0 33px 0;
+      }
+    }
+  }
+
+  // .block__title
+  &__title {
+    text-align: center;
+    font-size: 18px;
+    color: #353738;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+
+    &-generation {
+      margin: 0 0 33px 0;
+    }
+  }
+
+  // .block__text
+  &__text {
+    color: #848789;
+    text-align: center;
+
+    &-generation {
+      line-height: 1.889;
+      font-size: 18px;
+      margin: 0 0 30px 0;
+    }
+
+    // .block__text-brands
+    &-brands {
+      margin: 0 68px 45px 68px;
+      text-align: justify;
+      font-size: 16px;
+      line-height: 1.875;
+
+      &:after {
+        content: "";
+        background-color: #D8D8D8;
+        display: block;
+        margin: 35px auto 0 auto;
+        bottom: -41px;
+        width: 50px;
+        height: 1px;
+      }
+
+    }
+  }
+}
+
+//===========================================================================================================
+.brands {
+  background-color: #fff;
+
+  // .brands__row
+  &__row {
+    @include flexbox();
+  }
+
+  // .brands__column
+  &__column {
+    flex: 0 1 33.333%;
+    // .brands__column_b
+    &_b {
+      flex: 0 1 66.667%;
+    }
+  }
+
+  // .brands__item
+  &__item {
+  }
+
+  // .brands__block
+  &__block {
+  }
+
+  // .brands__image
+  &__image {
+  }
+}
+
+.item {
+  // .item__logo
+  &__logo {
+  }
+
+  // .item__image
+  &__image {
+  }
+}
+
+.block {
+  // .block__icon
+  &__icon {
+
+    // .block__icon-brands
+    &-brands {
+      margin: 70px 0 30px 0;
+      //@media (max-width: $md2+px) {
+      //  margin: 80px 0 33px 0;
+      //}
+      //@media (max-width: $md3+px) {
+      //  margin: 30px 0 33px 0;
+      //}
+    }
+  }
+
+  // .block__title
+  &__title {
+    // .block__title-brands
+    &-brands {
+      margin: 0 0 20px 0;
+
+    }
+  }
+}
+
+//===========================================================================================================
+//===========================================================================================================
 
 //</ОСНОВНОЙ БЛОК>===========================================================================================================
 
 //<ПОДКЛЮЧЕНИЯ>=========================================================================================================
-//@import "footer";
+@import "footer";
 //</ПОДКЛЮЧЕНИЯ>=========================================================================================================
