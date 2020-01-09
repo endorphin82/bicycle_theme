@@ -6,6 +6,7 @@ const concat = require('gulp-concat');
 const htmlmin = require('gulp-htmlmin');
 const rename = require('gulp-rename');
 const rigger = require('gulp-rigger');
+// const tinypng = require('gulp-tinypng-compress');
 
 gulp.task('scss', () =>
   gulp
@@ -14,12 +15,12 @@ gulp.task('scss', () =>
     //min
     // .pipe(sass({ outputStyle: 'compressed' }))
     // .pipe(rename({ suffix: '.min' }))
-    
+
     //NoMin
-    .pipe(sass({ outputStyle: 'expanded' }))
+    .pipe(sass({outputStyle: 'expanded'}))
 
     .pipe(gulp.dest('build/css'))
-    .pipe(browserSync.reload({ stream: true }))
+    .pipe(browserSync.reload({stream: true}))
 );
 
 gulp.task('html', () =>
@@ -29,23 +30,19 @@ gulp.task('html', () =>
     //min
     // .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('build/'))
-    .pipe(browserSync.reload({ stream: true }))
+    .pipe(browserSync.reload({stream: true}))
 );
-//add libs scripts
-// gulp.task('js-libs', () =>
-//   gulp
-//     .src([
-//       'node_modules/slick-carousel/slick/slick.js',
-//       'node_modules/magnific-popup/dist/jquery.magnific-popup.js'
-//     ])
-//     .pipe(concat('libs.js'))
-//     //min
-//     .pipe(uglify())
-//     .pipe(rename({ suffix: '.min' }))
 
-//     .pipe(gulp.dest('build/js'))
-//     .pipe(browserSync.reload({ stream: true }))
-// );
+// gulp.task('tinypng', function (){
+//   gulp
+//     .src('src/img/**/*.{png,jpg,jpeg}')
+//     .pipe(tinypng({
+//       key: 'TKzPZNpp2CgHVL39hlBdycdCDlvlp2mC',
+//       sigFile: 'images/.tinypng-sigs',
+//       log: true
+//     }))
+//     .pipe(gulp.dest('build/img'))
+// });
 
 gulp.task('js', () =>
   gulp
@@ -53,24 +50,24 @@ gulp.task('js', () =>
     .pipe(concat('main.js'))
     //min
     .pipe(uglify())
-    .pipe(rename({ suffix: '.min' }))
+    .pipe(rename({suffix: '.min'}))
 
     .pipe(gulp.dest('build/js'))
-    .pipe(browserSync.reload({ stream: true }))
+    .pipe(browserSync.reload({stream: true}))
 );
 
 gulp.task('img', () =>
   gulp
     .src('src/img/**/*.*')
     .pipe(gulp.dest('build/img'))
-    .pipe(browserSync.reload({ stream: true }))
+    .pipe(browserSync.reload({stream: true}))
 );
 
 gulp.task('fonts', () =>
   gulp
     .src('src/fonts/**/*.*')
     .pipe(gulp.dest('build/fonts'))
-    .pipe(browserSync.reload({ stream: true }))
+    .pipe(browserSync.reload({stream: true}))
 );
 
 gulp.task('browser-sync', () => {
@@ -89,7 +86,6 @@ gulp.task('watch', () => {
   gulp.watch('src/fonts/**/*.*', gulp.parallel('fonts'));
 });
 
-gulp.task(
-  'default',
+gulp.task('default',
   gulp.parallel('js', 'img', 'scss', 'fonts', 'html', /* 'js-libs',*/ 'browser-sync', 'watch')
 );

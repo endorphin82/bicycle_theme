@@ -8,7 +8,9 @@
   },
   "author": "endorphin82",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "gulp-tinypng-compress": "^1.2.5"
+  },
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
