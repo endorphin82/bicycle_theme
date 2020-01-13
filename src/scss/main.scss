@@ -1,4 +1,5 @@
 @import "mixins";
+@import "ui";
 //<ШРИФТЫ>===============================================================================================
 
 //<Подключаем шрифты>=======================================================================================
@@ -142,15 +143,16 @@ $md4: 479.98;
     color: #848789;
     text-align: center;
 
+    // .block__text-generation
     &-generation {
       line-height: 1.889;
       font-size: 18px;
-      margin: 0 0 30px 0;
+      margin: 30px 0 140px 0;
     }
 
     // .block__text-brands
     &-brands {
-      margin: 0 68px 45px 68px;
+      //margin: 0 68px 45px 68px;
       text-align: justify;
       font-size: 16px;
       line-height: 1.875;
@@ -163,8 +165,11 @@ $md4: 479.98;
         bottom: -41px;
         width: 50px;
         height: 1px;
-      }
+        @media (max-width: 1500px) {
+          margin: 15px auto 0 auto;
 
+        }
+      }
     }
   }
 }
@@ -172,6 +177,16 @@ $md4: 479.98;
 //===========================================================================================================
 .brands {
   background-color: #fff;
+
+  &_rev {
+    .brands__column {
+      @include flexorder(1);
+
+      &_b {
+        @include flexorder(2);
+      }
+    }
+  }
 
   // .brands__row
   &__row {
@@ -193,36 +208,110 @@ $md4: 479.98;
 
   // .brands__block
   &__block {
+    padding: 70px 65px 55px 65px;
+    position: relative;
+    //.block__text:&after
+    &:after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid #fff;
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      margin: 0 0 0 -10px;
+    }
   }
 
   // .brands__image
   &__image {
+    padding: 0 0 37.503% 0
+  }
+
+  @media (max-width: 1500px) {
+    &__block {
+      padding: 40px 35px 55px 30px;
+    }
+  }
+  @media (max-width: 1100px) {
+    //.brands_last
+    &_last {
+      .brands__column {
+        &:nth-child(1) {
+          @include flexorder(2);
+        }
+
+        &:nth-child(2) {
+          @include flexorder(1);
+        }
+
+        &:nth-child(3) {
+          @include flexorder(3);
+        }
+      }
+    }
+
+    //.brands_row
+    &__row {
+      flex-direction: column;
+    }
   }
 }
 
 .item {
+  height: 100%;
+  display: block;
+  position: relative;
   // .item__logo
   &__logo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    @include flexbox();
+    @include anim(0.3s, 0s);
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    //opacity: 0;
+
+  }
+
+  //.item:hover
+  &:hover {
+    .item__logo {
+      //opacity: 1;
+      background-color: rgba(100, 194, 158, 0.8);
+
+    }
   }
 
   // .item__image
   &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
   }
+
+  @media (max-width: 1100px) {
+    height: auto;
+    padding: 0 0 70% 0;
+  }
+
 }
+
 
 .block {
   // .block__icon
   &__icon {
-
     // .block__icon-brands
     &-brands {
-      margin: 70px 0 30px 0;
-      //@media (max-width: $md2+px) {
-      //  margin: 80px 0 33px 0;
-      //}
-      //@media (max-width: $md3+px) {
-      //  margin: 30px 0 33px 0;
-      //}
+      margin: 0 0 30px 0;
     }
   }
 
@@ -231,11 +320,62 @@ $md4: 479.98;
     // .block__title-brands
     &-brands {
       margin: 0 0 20px 0;
-
     }
   }
 }
 
+//===========================================================================================================
+.slider {
+  background-color: #F7F7F7;
+  padding: 120px 0 60px 0;
+
+  // .slider__body
+  &__body {
+
+  }
+
+  // .slider__item
+  &__item {
+    text-align: center;
+
+  }
+
+  // .slider__icon
+  &__icon {
+    margin: 0 0 20px 0;
+  }
+
+  // .slider__title
+  &__title {
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #353738;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+
+    span {
+      color: #848789;
+      font-weight: 300;
+
+    }
+
+  }
+
+  // .slider__text
+  &__text {
+    font-size: 24px;
+    font-weight: 400;
+    font-style: italic;
+    color: #848789;
+    line-height: 1.417;
+  }
+}
+.slid{
+  height: 100%;
+  font-size: 24px;
+}
+//#A8B1B5
 //===========================================================================================================
 //===========================================================================================================
 
@@ -243,4 +383,5 @@ $md4: 479.98;
 
 //<ПОДКЛЮЧЕНИЯ>=========================================================================================================
 @import "footer";
+
 //</ПОДКЛЮЧЕНИЯ>=========================================================================================================
