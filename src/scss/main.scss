@@ -219,7 +219,7 @@ $md4: 479.98;
       border-right: 10px solid transparent;
       border-top: 10px solid #fff;
       position: absolute;
-      bottom: -10px;
+      bottom: -9px;
       left: 50%;
       margin: 0 0 0 -10px;
     }
@@ -371,13 +371,131 @@ $md4: 479.98;
     line-height: 1.417;
   }
 }
-.slid{
+
+.slid {
   height: 100%;
   font-size: 24px;
 }
+
 //#A8B1B5
 //===========================================================================================================
+
+.shop {
+  // .shop__body
+  &__body {
+    @include flexbox();
+
+  }
+
+  // .shop__column
+  &__column {
+    flex: 0 1 16.666%;
+    // .shop__column_b
+    &_b {
+      flex: 0 1 33.333%;
+    }
+  }
+
+  // .shop__block
+  &__block {
+
+  }
+
+  // .shop__footer
+  &__footer {
+    padding: 75px 0;
+    background-color: #282f35;
+    text-align: center;
+  }
+
+  // .shop__btn
+  &__btn {
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #fff;
+    height: 50px;
+    line-height: 48px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0 60px;
+    letter-spacing: 2.8px;
+  }
+
+  @media (max-width: 1100px) {
+    &__body {
+      flex-wrap: wrap;
+    }
+    &__column {
+      flex: 0 1 33.333%;
+      // .shop__column_b
+      &_b {
+        flex: 0 1 66.667%;
+      }
+    }
+    &__footer {
+      padding: 50px 0;
+    }
+  }
+  @media (max-width: $md3+px) {
+
+    &__column {
+      flex: 0 1 50%;
+      // .shop__column_b
+      &_b {
+        flex: 0 1 100%;
+      }
+    }
+    &__btn {
+      padding: 0 30px;
+    }
+  }
+}
+
+.block-shop {
+  height: 100%;
+  // .block-shop__row
+  &__row {
+    @include flexbox();
+    //
+  }
+
+  // .block-shop__column
+  &__column {
+    flex: 0 1 50%;
+  }
+
+  // .block-shop__item
+  &__item {
+    height: auto;
+    flex: 0 1 100%;
+    padding: 0 0 50% 0;
+    // .block-shop__item_l
+    &_l {
+      padding: 0 0 100% 0;
+    }
+
+    // .block-shop__item_b
+    &_b {
+      padding: 0 0 200% 0;
+    }
+
+  }
+}
+
+.item {
+  // .item__logo
+  &__logo {
+    opacity: 0;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
 //===========================================================================================================
+
 
 //</ОСНОВНОЙ БЛОК>===========================================================================================================
 
