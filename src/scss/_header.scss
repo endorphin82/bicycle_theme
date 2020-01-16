@@ -10,6 +10,7 @@
   left: 0;
   top: 35px;
   z-index: 50;
+
   // .header__row
   &__row {
     @include flexbox();
