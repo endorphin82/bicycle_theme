@@ -13,11 +13,11 @@ gulp.task('scss', () =>
     .src(['src/scss/**/*.scss', '!src/scss/libs/*.*', '!src/scss/**/_*.*'])
 
     //min
-    // .pipe(sass({ outputStyle: 'compressed' }))
-    // .pipe(rename({ suffix: '.min' }))
+    .pipe(sass({ outputStyle: 'compressed' }))
+    .pipe(rename({ suffix: '.min' }))
 
     //NoMin
-    .pipe(sass({outputStyle: 'expanded'}))
+    // .pipe(sass({outputStyle: 'expanded'}))
 
     .pipe(gulp.dest('build/css'))
     .pipe(browserSync.reload({stream: true}))
@@ -28,7 +28,7 @@ gulp.task('html', () =>
     .src(['src/**/*.html', '!src/**/_*.*'])
     .pipe(rigger())
     //min
-    // .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('build/'))
     .pipe(browserSync.reload({stream: true}))
 );
